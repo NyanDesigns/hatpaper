@@ -7,7 +7,7 @@ export default function AnimatedHome({ chapters }) {
   return (
     <main className="flex flex-col justify-between min-h-screen subtitle-center">
       {/* heroSection */}
-      <section className="flex flex-col justify-center min-h-screen gap-2 p-6 subtitle-center text-foreground">
+      <section className="flex flex-col justify-center w-full min-h-screen gap-2 p-6 subtitle-center text-foreground">
         {/* title */}
         <motion.h1
           className="mt-16 mb-2 text-5xl font-semibold tracking-wide text-center"
@@ -27,7 +27,7 @@ export default function AnimatedHome({ chapters }) {
           Intersection of Four Architectural Dimensions
         </motion.h2>
         {/* table_of_contents */}
-        <ChapterList chapters={chapters} />
+        <ChapterList className="w-full" chapters={chapters} />
       </section>
     </main>
   );

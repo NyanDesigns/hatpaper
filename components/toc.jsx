@@ -18,7 +18,7 @@ const ChapterList = ({ chapters }) => {
   };
 
   return (
-    <section>
+    <section className="flex flex-col items-center w-full">
       {chapters.map((chapter, index) => (
         <motion.div
           key={index}
@@ -28,7 +28,7 @@ const ChapterList = ({ chapters }) => {
           transition={{ duration: 0.5, delay: 2.75 + index * 0.5 }}
         >
           <motion.div
-            className="px-4 py-2 cursor-pointer bg-foreground text-background"
+            className="w-full sm-w-[800px] px-4 py-2 cursor-pointer bg-foreground text-background"
             whileHover={{ scale: 1.05 }}
             onMouseEnter={() => setHoveredSection(chapter.title)}
             onMouseLeave={() => setHoveredSection(null)}
@@ -42,7 +42,7 @@ const ChapterList = ({ chapters }) => {
                 {getSubtitleArray(chapter.subtitle).map((item, itemIndex) => (
                   <Link
                     key={`${index}-${itemIndex}`}
-                    href={`/${chapter.slug}`}
+                    href={`/chapters/${chapter.slug}`}
                     className="block mb-2"
                   >
                     <motion.p
